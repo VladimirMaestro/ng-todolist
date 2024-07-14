@@ -1,0 +1,15 @@
+Products:
+----------------------------------------------------------
+GET         /products   /products/3
+POST        /products
+DELETE      /products   /products/5
+PUT         /products   /products/9
+
+Comments:
+----------------------------------------------------------
+GET         /products/1/comments   /products/1/comments/3
+POST        /products/1/comments
+DELETE      /products/1/comments   /products/1/comments/5
+PUT         /products/1/comments   /products/1/comments/9
+
+
