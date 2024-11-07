@@ -1,1 +1,6 @@
-<b>New task form</b>
+<div class="input-group">
+  <input type="text" class="form-control" placeholder="description task" aria-label="Recipient's username with two button addons" [formControl]="titleCtrl">
+  <button class="btn btn-outline-secondary" type="button" (click)="createTask()">Add task</button>
+</div>
+<div *ngIf="titleCtrl.touched && titleCtrl.errors?.['required']">Required</div>
+

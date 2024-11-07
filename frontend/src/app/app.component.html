@@ -1,7 +1,15 @@
-<h1>{{ title }}</h1>
-<div>
-  <app-tasks-list [(abc)]="title"></app-tasks-list>
-</div>
-<div>
-  <app-new-task-form></app-new-task-form>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div >
+        <app-filters-form></app-filters-form>
+      </div>
+      <div >
+        <app-tasks-list></app-tasks-list>
+      </div>
+      <div>
+        <app-new-task-form></app-new-task-form>
+      </div>
+    </div>
+  </div>
 </div>

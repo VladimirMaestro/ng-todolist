@@ -1,0 +1,15 @@
+<div>
+  <div>Filters:</div>
+  <div class="dropdown">
+    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <span *ngIf="!currentStatus">All</span>
+      <span *ngIf="currentStatus === TaskStatus.COMPLETED">Completed</span>
+      <span *ngIf="currentStatus === TaskStatus.NOT_STARTED">Not started</span>
+    </a>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#" (click)="applyFilters()">All</a></li>
+      <li><a class="dropdown-item" href="#" (click)="applyFilters(TaskStatus.COMPLETED)">Completed</a></li>
+      <li><a class="dropdown-item" href="#" (click)="applyFilters(TaskStatus.NOT_STARTED)">Not started</a></li>
+    </ul>
+  </div>
+</div>

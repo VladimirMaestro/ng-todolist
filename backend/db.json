@@ -1,24 +1,58 @@
 {
   "tasks": [
     {
-      "id": 1,
-      "title": "json-server 1",
-      "author": "typicode 1"
+      "title": "sfsdf",
+      "status": "NOT_STARTED",
+      "date": "2024-11-01T10:39:15.570Z",
+      "id": "zLPtPjr"
     },
     {
-      "id": 2,
-      "title": "json-server 2",
-      "author": "typicode 2"
+      "title": "Asfasfs",
+      "status": "NOT_STARTED",
+      "date": "2024-11-02T20:00:53.024Z",
+      "id": "Ujf_c-v"
     },
     {
-      "title": "Four",
-      "author": "Four 444",
-      "id": 4
+      "title": "Asfasfs2",
+      "status": "NOT_STARTED",
+      "date": "2024-11-03T20:04:27.911Z",
+      "id": "auP6Ma4"
     },
     {
-      "title": "Test",
-      "author": "typicode 55",
-      "id": 5
+      "title": "длрролорлорло",
+      "status": "NOT_STARTED",
+      "date": "2024-10-04T21:40:41.666Z",
+      "id": "V_ebMyD"
+    },
+    {
+      "title": "длрsdf",
+      "status": "NOT_STARTED",
+      "date": "2023-11-04T21:40:52.394Z",
+      "id": "6-hzC9C"
+    },
+    {
+      "title": "sg",
+      "status": "NOT_STARTED",
+      "date": "2024-11-04T21:40:54.973Z",
+      "id": "KusiPXO"
+    },
+    {
+      "title": "чмчсмчмчсмч",
+      "status": "NOT_STARTED",
+      "date": "2024-11-04T21:41:08.526Z",
+      "id": "OujJo8U"
+    },
+    {
+      "title": "чсмчсмчсм",
+      "status": "NOT_STARTED",
+      "date": "2024-11-02T21:41:12.785Z",
+      "id": "-L9kVb4"
+    },
+    {
+      "title": "sdf",
+      "status": "NOT_STARTED",
+      "date": "2024-11-01T21:41:21.653Z",
+      "id": "XOSceHr"
     }
   ]
 }

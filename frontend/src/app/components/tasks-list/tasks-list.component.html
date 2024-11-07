@@ -1,1 +1,17 @@
-<div (click)="emitData()">Emit data</div>
+<table class="table">
+  <tbody>
+  <tr *ngFor="let task of tasks" class="task-row">
+    <td class="task-row__checkbox">
+      <input #checkbox type="checkbox" class="form-check-input"
+             [checked]="isTaskCompleted(task)"
+             (change)="onCompleteStatusChange(task, checkbox.checked)">
+    </td>
+    <td>{{ task.title }}</td>
+    <td>{{ task.date | date: 'yyyy-MM-dd' }}</td>
+    <td>{{ task.daysPassed }}</td>
+    <td class="task-actions-col">
+      <button type="button" class="btn btn-outline-danger" (click)=deleteTask(task)>Delete task</button>
+    </td>
+  </tr>
+  </tbody>
+</table>

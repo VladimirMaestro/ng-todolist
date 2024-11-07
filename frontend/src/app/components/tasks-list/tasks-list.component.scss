@@ -2,6 +2,12 @@
   display: block;
 }
 
-span {
-  color: green;
+.task-row__checkbox {
+  width: 1%;
+  white-space: nowrap;
+}
+
+.task-actions-col {
+  display: flex;
+  justify-content: flex-end;
 }
