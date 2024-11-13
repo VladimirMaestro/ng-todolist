@@ -1,15 +1,49 @@
-<div>
-  <div>Filters:</div>
-  <div class="dropdown">
-    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-      <span *ngIf="!currentStatus">All</span>
-      <span *ngIf="currentStatus === TaskStatus.COMPLETED">Completed</span>
-      <span *ngIf="currentStatus === TaskStatus.NOT_STARTED">Not started</span>
-    </a>
-    <ul class="dropdown-menu">
-      <li><a class="dropdown-item" href="#" (click)="applyFilters()">All</a></li>
-      <li><a class="dropdown-item" href="#" (click)="applyFilters(TaskStatus.COMPLETED)">Completed</a></li>
-      <li><a class="dropdown-item" href="#" (click)="applyFilters(TaskStatus.NOT_STARTED)">Not started</a></li>
-    </ul>
-  </div>
+<table class="table">
+  <tbody>
+  <tr class="task-row">
+    <td class="dropdown">
+      <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+         aria-expanded="false">
+        <span *ngIf="!currentStatus">All</span>
+        <span *ngIf="currentStatus === TaskStatus.COMPLETED">Completed</span>
+        <span *ngIf="currentStatus === TaskStatus.NOT_STARTED">Not started</span>
+      </a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#" (click)="applyFilters()">All</a></li>
+        <li><a class="dropdown-item" href="#" (click)="applyFilters(TaskStatus.COMPLETED)">Completed</a></li>
+        <li><a class="dropdown-item" href="#" (click)="applyFilters(TaskStatus.NOT_STARTED)">Not started</a></li>
+      </ul>
+    </td>
+    <td>
+      <input class="form-control" type="text" placeholder="Input search string"
+      [formControl]="formSearchString" (input)="onInputChange()"/>
+    </td>
+    <td class="task-actions-col">
+      <button type="button" class="btn btn-outline-secondary" (click)="showTaskForm()">Add task</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<!--<app-new-task-form *ngIf="this.taskFormVisible"></app-new-task-form>-->
+<div *ngIf="this.taskFormVisible">
+  <main class="mb-3" >
+    <div class="mb-3">
+      <input class="form-control" type="text" placeholder="Task title *" aria-label="default input example">
+    </div>
+    <div class="mb-3">
+      <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Task description" rows="3"></textarea>
+    </div>
+    <div class="row mb-3">
+      <label for="days-to-complete" class="col-auto col-form-label">Days to complete:</label>
+      <div class="col-3">
+        <input id="days-to-complete" class="form-control" type="number" placeholder="Days">
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <button type="submit" class="btn btn-light me-3" (click)="hideTaskForm()">Cancel</button>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </footer>
 </div>
+
+
