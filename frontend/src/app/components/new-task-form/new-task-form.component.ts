@@ -1,4 +1,4 @@
-import { Component, inject } from "@angular/core";
+import { Component, EventEmitter, inject, Output } from "@angular/core";
 import { FormControl, Validators } from "@angular/forms";
 import { TasksService } from "../../services/tasks.service";
 import { Task } from "../../models/task";
@@ -11,7 +11,8 @@ import { TaskStatus } from "../../models/task-status";
 export class NewTaskFormComponent {
   public titleCtrl: FormControl = new FormControl('', [Validators.required]);
   private tasksService: TasksService = inject(TasksService);
-
+//  public taskFormVisible: boolean = false;
+  @Output() taskFormVisible = new EventEmitter<boolean>();
   createTask(): void {
     if (this.titleCtrl.invalid) {
       return;
@@ -23,4 +24,15 @@ export class NewTaskFormComponent {
     };
     this.tasksService.createTask$(task).subscribe();
   }
+
+  // showTaskForm(): void {
+  //   this.taskFormVisible = true;
+  // }
+
+  hideTaskForm(): void {
+  //  this.taskFormVisible = false;
+    this.taskFormVisible.emit(false);
+  }
+
+
 }

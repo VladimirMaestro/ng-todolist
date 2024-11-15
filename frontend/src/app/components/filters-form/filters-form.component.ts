@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from "@angular/core";
+import { Component, inject, OnInit ,EventEmitter, Output} from "@angular/core";
 import { TaskStatus } from "../../models/task-status";
 import { AppStore } from "../../store/app.store";
 import { AppState } from "../../models/app-state";
@@ -14,8 +14,8 @@ export class FiltersFormComponent implements OnInit {
   protected appStore: AppStore = inject(AppStore);
   protected currentStatus: TaskStatus;
   public formSearchString: FormControl = new FormControl('',);
-
-  public taskFormVisible: boolean = false;
+  @Output() taskFormVisible = new EventEmitter<boolean>();
+  //public taskFormVisible: boolean = false;
 
   ngOnInit(): void {
     this.appStore.state$.subscribe((state: AppState) => {
@@ -32,10 +32,7 @@ export class FiltersFormComponent implements OnInit {
   }
 
   showTaskForm(): void {
-    this.taskFormVisible = true;
+    this.taskFormVisible.emit(true);
   }
 
-  hideTaskForm(): void {
-    this.taskFormVisible = false;
-  }
 }

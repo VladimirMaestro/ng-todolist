@@ -2,13 +2,14 @@
   <div class="row">
     <div class="col">
       <div >
-        <app-filters-form></app-filters-form>
+<!--        <app-filters-form   (taskFormVisible)="receiveData($event)" >{{ receivedTaskFormVisible }} </app-filters-form>-->
+        <app-filters-form (taskFormVisible)="receiveTaskFormVisible($event)" > </app-filters-form>
       </div>
       <div >
-        <app-tasks-list></app-tasks-list>
+        <app-new-task-form (taskFormVisible)="receiveTaskFormVisible($event)" *ngIf="this.receivedTaskFormVisible"></app-new-task-form>
       </div>
       <div>
-        <app-new-task-form></app-new-task-form>
+        <app-tasks-list></app-tasks-list>
       </div>
     </div>
   </div>
