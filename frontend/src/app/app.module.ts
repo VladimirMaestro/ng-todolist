@@ -6,14 +6,14 @@ import { NewTaskFormComponent } from './components/new-task-form/new-task-form.c
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from "@angular/common";
 import { HttpClientModule } from "@angular/common/http";
-import { FiltersFormComponent } from "./components/filters-form/filters-form.component";
+import { TasksFiltersComponent } from "./components/tasks-filters/tasks-filters.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     TaskListComponent,
     NewTaskFormComponent,
-    FiltersFormComponent,
+    TasksFiltersComponent,
   ],
   imports: [
     CommonModule,

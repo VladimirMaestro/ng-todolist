@@ -11,7 +11,6 @@ import { TaskStatus } from "../../models/task-status";
 export class NewTaskFormComponent {
   public titleCtrl: FormControl = new FormControl('', [Validators.required]);
   private tasksService: TasksService = inject(TasksService);
-//  public taskFormVisible: boolean = false;
   @Output() taskFormVisible = new EventEmitter<boolean>();
   createTask(): void {
     if (this.titleCtrl.invalid) {

@@ -6,8 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  public receivedTaskFormVisible:boolean= false;
+  public newTaskFormVisible:boolean= false;
   receiveTaskFormVisible(data: boolean) {
-    this.receivedTaskFormVisible = data;
+    this.newTaskFormVisible = data;
   }
 }

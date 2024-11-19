@@ -5,17 +5,16 @@ import { AppState } from "../../models/app-state";
 import { FormControl } from "@angular/forms";
 
 @Component({
-  selector: 'app-filters-form',
-  templateUrl: 'filters-form.component.html',
-  styleUrls: ['filters-form.component.scss']
+  selector: 'app-tasks-filters',
+  templateUrl: 'tasks-filters.component.html',
+  styleUrls: ['tasks-filters.component.scss']
 })
-export class FiltersFormComponent implements OnInit {
+export class TasksFiltersComponent implements OnInit {
   protected TaskStatus = TaskStatus;
   protected appStore: AppStore = inject(AppStore);
   protected currentStatus: TaskStatus;
-  public formSearchString: FormControl = new FormControl('',);
+  public searchStringControl: FormControl = new FormControl('',);
   @Output() taskFormVisible = new EventEmitter<boolean>();
-  //public taskFormVisible: boolean = false;
 
   ngOnInit(): void {
     this.appStore.state$.subscribe((state: AppState) => {
@@ -23,12 +22,12 @@ export class FiltersFormComponent implements OnInit {
     });
   }
 
-  applyFilters(status?: TaskStatus): void {
+  applyStatusFilter(status?: TaskStatus): void {
     this.appStore.patchFilters({ status });
   }
 
-  onInputChange() {
-    this.appStore.patchFilters({ searchString: this.formSearchString.value });
+  onFilterSearchStringChange() {
+    this.appStore.patchFilters({ searchString: this.searchStringControl.value });
   }
 
   showTaskForm(): void {

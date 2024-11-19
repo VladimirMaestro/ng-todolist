@@ -1,13 +1,4 @@
-<!--<div class="input-group">-->
-<!--  <input type="text" class="form-control" placeholder="description task" aria-label="Recipient's username with two button addons" [formControl]="titleCtrl">-->
-<!--  <button class="btn btn-outline-secondary" type="button" (click)="createTask()">Add task</button>-->
-<!--</div>-->
-<!--<div *ngIf="titleCtrl.touched && titleCtrl.errors?.['required']">Required</div>-->
-
-
-<!--<app-new-task-form *ngIf="this.taskFormVisible"></app-new-task-form>-->
-<!--<div *ngIf="this.taskFormVisible">-->
-  <main class="mb-3" >
+ <main class="mb-3" >
     <div class="mb-3">
       <input class="form-control" type="text" [formControl]="titleCtrl" placeholder="Task title *" aria-label="default input example">
     </div>
@@ -25,5 +16,4 @@
     <button type="submit" class="btn btn-light me-3" (click)="hideTaskForm()">Cancel</button>
     <button type="submit" class="btn btn-primary" (click)="createTask()" >Submit</button>
   </footer>
-<!--</div>-->
 

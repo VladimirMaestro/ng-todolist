@@ -9,14 +9,14 @@
         <span *ngIf="currentStatus === TaskStatus.NOT_STARTED">Not started</span>
       </a>
       <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#" (click)="applyFilters()">All</a></li>
-        <li><a class="dropdown-item" href="#" (click)="applyFilters(TaskStatus.COMPLETED)">Completed</a></li>
-        <li><a class="dropdown-item" href="#" (click)="applyFilters(TaskStatus.NOT_STARTED)">Not started</a></li>
+        <li><a class="dropdown-item" href="#" (click)="applyStatusFilter()">All</a></li>
+        <li><a class="dropdown-item" href="#" (click)="applyStatusFilter(TaskStatus.COMPLETED)">Completed</a></li>
+        <li><a class="dropdown-item" href="#" (click)="applyStatusFilter(TaskStatus.NOT_STARTED)">Not started</a></li>
       </ul>
     </td>
     <td>
       <input class="form-control" type="text" placeholder="Input search string"
-      [formControl]="formSearchString" (input)="onInputChange()"/>
+             [formControl]="searchStringControl" (input)="onFilterSearchStringChange()"/>
     </td>
     <td class="task-actions-col">
       <button type="button" class="btn btn-outline-secondary" (click)="showTaskForm()">Add task</button>
