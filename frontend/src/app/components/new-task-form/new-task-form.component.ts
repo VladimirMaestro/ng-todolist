@@ -24,10 +24,6 @@ export class NewTaskFormComponent {
     this.tasksService.createTask$(task).subscribe();
   }
 
-  // showTaskForm(): void {
-  //   this.taskFormVisible = true;
-  // }
-
   hideTaskForm(): void {
   //  this.taskFormVisible = false;
     this.taskFormVisible.emit(false);

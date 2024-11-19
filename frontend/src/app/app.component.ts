@@ -7,7 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public newTaskFormVisible:boolean= false;
-  receiveTaskFormVisible(data: boolean) {
-    this.newTaskFormVisible = data;
+
+  showTaskForm() {
+    this.newTaskFormVisible = true;
+  }
+
+  hideTaskForm(): void {
+    this.newTaskFormVisible = false;
   }
 }

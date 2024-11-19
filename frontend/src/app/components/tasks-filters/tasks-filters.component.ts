@@ -14,7 +14,7 @@ export class TasksFiltersComponent implements OnInit {
   protected appStore: AppStore = inject(AppStore);
   protected currentStatus: TaskStatus;
   public searchStringControl: FormControl = new FormControl('',);
-  @Output() taskFormVisible = new EventEmitter<boolean>();
+  // @Output() taskFormVisible = new EventEmitter<boolean>();
 
   ngOnInit(): void {
     this.appStore.state$.subscribe((state: AppState) => {
@@ -30,8 +30,8 @@ export class TasksFiltersComponent implements OnInit {
     this.appStore.patchFilters({ searchString: this.searchStringControl.value });
   }
 
-  showTaskForm(): void {
-    this.taskFormVisible.emit(true);
-  }
+  // showTaskForm(): void {
+  //   this.taskFormVisible.emit(true);
+  // }
 
 }
