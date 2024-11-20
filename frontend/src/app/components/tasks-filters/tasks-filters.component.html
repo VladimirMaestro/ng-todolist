@@ -4,9 +4,9 @@
     <td class="dropdown">
       <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
          aria-expanded="false">
-        <span *ngIf="!currentStatus">All</span>
-        <span *ngIf="currentStatus === TaskStatus.COMPLETED">Completed</span>
-        <span *ngIf="currentStatus === TaskStatus.NOT_STARTED">Not started</span>
+        <span *ngIf="!currentTaskStatus">All</span>
+        <span *ngIf="currentTaskStatus === TaskStatus.COMPLETED">Completed</span>
+        <span *ngIf="currentTaskStatus === TaskStatus.NOT_STARTED">Not started</span>
       </a>
       <ul class="dropdown-menu">
         <li><a class="dropdown-item" href="#" (click)="applyStatusFilter()">All</a></li>
@@ -18,9 +18,6 @@
       <input class="form-control" type="text" placeholder="Input search string"
              [formControl]="searchStringControl" (input)="onFilterSearchStringChange()"/>
     </td>
-<!--    <td class="task-actions-col">-->
-<!--      <button type="button" class="btn btn-outline-secondary" (click)="showTaskForm()">Add task</button>-->
-<!--    </td>-->
   </tr>
   </tbody>
 </table>

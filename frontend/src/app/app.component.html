@@ -3,10 +3,10 @@
     <div class="col">
       <div >
         <app-tasks-filters></app-tasks-filters>
-        <button  class="btn btn-outline-secondary" (click)="showTaskForm()">Add task</button>
+        <button class="btn btn-outline-secondary" (click)="showTaskForm()">Add task</button>
       </div>
       <div >
-        <app-new-task-form (taskFormVisible)="hideTaskForm()" *ngIf="this.newTaskFormVisible"></app-new-task-form>
+        <app-new-task-form (cancel)="hideTaskForm()" *ngIf="this.newTaskFormVisible"></app-new-task-form>
       </div>
       <div>
         <app-tasks-list></app-tasks-list>

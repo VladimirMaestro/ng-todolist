@@ -12,13 +12,12 @@ import { FormControl } from "@angular/forms";
 export class TasksFiltersComponent implements OnInit {
   protected TaskStatus = TaskStatus;
   protected appStore: AppStore = inject(AppStore);
-  protected currentStatus: TaskStatus;
-  public searchStringControl: FormControl = new FormControl('',);
-  // @Output() taskFormVisible = new EventEmitter<boolean>();
+  protected currentTaskStatus: TaskStatus;
+  public searchStringControl: FormControl = new FormControl('');
 
   ngOnInit(): void {
     this.appStore.state$.subscribe((state: AppState) => {
-      this.currentStatus = state.filters.status;
+      this.currentTaskStatus = state.filters.status;
     });
   }
 
@@ -29,9 +28,4 @@ export class TasksFiltersComponent implements OnInit {
   onFilterSearchStringChange() {
     this.appStore.patchFilters({ searchString: this.searchStringControl.value });
   }
-
-  // showTaskForm(): void {
-  //   this.taskFormVisible.emit(true);
-  // }
-
 }
