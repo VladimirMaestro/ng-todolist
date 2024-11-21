@@ -1,19 +1,20 @@
- <main class="mb-3" >
-    <div class="mb-3">
-      <input class="form-control" type="text" [formControl]="titleCtrl" placeholder="Task title *" aria-label="default input example">
+<main class="mb-3">
+  <div class="mb-3">
+    <input class="form-control" type="text" placeholder="Task title *"
+           aria-label="default input example" [formControl]="titleCtrl">
+  </div>
+  <div class="mb-3">
+    <textarea class="form-control" placeholder="Task description" rows="3"></textarea>
+  </div>
+  <div class="row mb-3">
+    <label for="days-to-complete" class="col-auto col-form-label">Days to complete:</label>
+    <div class="col-3">
+      <input id="days-to-complete" class="form-control" type="number" placeholder="Days">
     </div>
-    <div class="mb-3">
-      <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Task description" rows="3"></textarea>
-    </div>
-    <div class="row mb-3">
-      <label for="days-to-complete" class="col-auto col-form-label">Days to complete:</label>
-      <div class="col-3">
-        <input id="days-to-complete" class="form-control" type="number" placeholder="Days">
-      </div>
-    </div>
-  </main>
-  <footer class="footer">
-    <button type="submit" class="btn btn-light me-3" (click)="onCancel()">Cancel</button>
-    <button type="submit" class="btn btn-primary" (click)="createTask()" >Submit</button>
-  </footer>
+  </div>
+</main>
+<footer class="footer">
+  <button type="submit" class="btn btn-light me-3" (click)="onCancel()">Cancel</button>
+  <button type="submit" class="btn btn-primary" (click)="createTask()">Submit</button>
+</footer>
 

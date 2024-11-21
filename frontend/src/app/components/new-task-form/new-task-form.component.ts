@@ -12,6 +12,7 @@ export class NewTaskFormComponent {
   public titleCtrl: FormControl = new FormControl('', [Validators.required]);
   private tasksService: TasksService = inject(TasksService);
   @Output() cancel = new EventEmitter<boolean>();
+
   createTask(): void {
     if (this.titleCtrl.invalid) {
       return;
