@@ -3,6 +3,7 @@ import { FormControl, Validators } from "@angular/forms";
 import { TasksService } from "../../services/tasks.service";
 import { Task } from "../../models/task";
 import { TaskStatus } from "../../models/task-status";
+import { BsModalRef } from "ngx-bootstrap/modal";
 
 @Component({
   selector: 'app-new-task-form',
@@ -11,7 +12,7 @@ import { TaskStatus } from "../../models/task-status";
 export class NewTaskFormComponent {
   public titleCtrl: FormControl = new FormControl('', [Validators.required]);
   private tasksService: TasksService = inject(TasksService);
-  @Output() cancel = new EventEmitter<boolean>();
+  public bsModalRef: BsModalRef = inject(BsModalRef);
 
   createTask(): void {
     if (this.titleCtrl.invalid) {
@@ -26,6 +27,6 @@ export class NewTaskFormComponent {
   }
 
   onCancel(): void {
-    this.cancel.emit(false);
+    this.bsModalRef.hide();
   }
 }
