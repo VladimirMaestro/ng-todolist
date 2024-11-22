@@ -3,11 +3,12 @@ import { Task } from "../models/task";
 import { Injectable } from "@angular/core";
 import { BehaviorSubject, Observable } from "rxjs";
 import { TaskFilters } from "../models/task-filters";
+import { TaskStatus } from "../models/task-status";
 
 
 @Injectable({ providedIn: 'root' })
 export class AppStore {
-  private state: AppState = { filters: { status: null }, tasks: [] };
+  private state: AppState = { filters: { status: null, searchString: null }, tasks: [] };
   private stateSubject$: BehaviorSubject<AppState> = new BehaviorSubject(this.state);
   public state$: Observable<any> = this.stateSubject$.asObservable();
 

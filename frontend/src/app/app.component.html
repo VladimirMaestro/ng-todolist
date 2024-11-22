@@ -2,13 +2,14 @@
   <div class="row">
     <div class="col">
       <div >
-        <app-filters-form></app-filters-form>
+        <app-tasks-filters></app-tasks-filters>
+        <button class="btn btn-outline-secondary" (click)="showTaskForm()">Add task</button>
       </div>
       <div >
-        <app-tasks-list></app-tasks-list>
+        <app-new-task-form (cancel)="hideTaskForm()" *ngIf="this.newTaskFormVisible"></app-new-task-form>
       </div>
       <div>
-        <app-new-task-form></app-new-task-form>
+        <app-tasks-list></app-tasks-list>
       </div>
     </div>
   </div>

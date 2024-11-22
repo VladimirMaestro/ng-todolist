@@ -5,6 +5,7 @@ import { TaskStatus } from "../models/task-status";
 import { TaskApi } from "../api/task.api";
 import { map, Observable, tap } from "rxjs";
 import { AppState } from "../models/app-state";
+import { TaskFilters } from "../models/task-filters";
 
 @Injectable({ providedIn: 'root' })
 export class TasksService {
@@ -49,11 +50,20 @@ export class TasksService {
 
   getFilteredTasks$(): Observable<Task[]> {
     return this.appStore.state$.pipe(
+      // TODO Use selectors to improve performance
       map((state: AppState) => {
-        return state.tasks.filter((task: Task) => {
-          return state.filters.status
-            ? task.status === state.filters.status
-            : true;
+        const filters: TaskFilters = state.filters;
+        const tasks: Task[] = state.tasks;
+        return tasks.filter((task: Task) => {
+          if (filters.status && task.status !== filters.status) {
+            return false;
+          }
+          if (filters.searchString) {
+            const searchStringLowerCase: string = filters.searchString.toLowerCase();
+            const titleLowerCase: string = task.title.toLowerCase();
+            return titleLowerCase.includes(searchStringLowerCase);
+          }
+          return true;
         });
       })
     );
