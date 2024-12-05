@@ -7,8 +7,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from "@angular/common";
 import { HttpClientModule } from "@angular/common/http";
 import { TasksFiltersComponent } from "./components/tasks-filters/tasks-filters.component";
-import { ModalModule } from "ngx-bootstrap/modal";
-import { ModalDialogComponent } from "./components/modal-dialog/modal-dialog.component";
+import { ManageTaskDialog } from "./dialogs/manage-task/manage-task.dialog";
+import { AppDialogModule } from "./sdk/dialogs/dialog.module";
 
 @NgModule({
   declarations: [
@@ -16,14 +16,14 @@ import { ModalDialogComponent } from "./components/modal-dialog/modal-dialog.com
     TaskListComponent,
     NewTaskFormComponent,
     TasksFiltersComponent,
-    ModalDialogComponent
+    ManageTaskDialog
   ],
   imports: [
     CommonModule,
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
-    ModalModule.forRoot()
+    AppDialogModule
   ],
   bootstrap: [AppComponent]
 })

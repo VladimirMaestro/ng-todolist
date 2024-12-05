@@ -11,12 +11,12 @@
              aria-label="default input example" [formControl]="titleCtrl">
     </div>
     <div class="mb-3">
-      <textarea class="form-control" placeholder="Task description" rows="3"></textarea>
+      <textarea class="form-control" placeholder="Task description" rows="3" [formControl]="descriptionCtrl"></textarea>
     </div>
     <div class="row mb-3">
       <label for="days-to-complete" class="col-auto col-form-label">Days to complete:</label>
       <div class="col-3">
-        <input id="days-to-complete" class="form-control" type="number" placeholder="Days">
+        <input id="days-to-complete" class="form-control" type="number" placeholder="Days" [formControl]="daysCtrl">
       </div>
     </div>
   </main>

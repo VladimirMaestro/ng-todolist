@@ -11,15 +11,21 @@ import { BsModalRef } from "ngx-bootstrap/modal";
 })
 export class NewTaskFormComponent {
   public titleCtrl: FormControl = new FormControl('', [Validators.required]);
+  public descriptionCtrl: FormControl = new FormControl('', [Validators.required]);
+  public daysCtrl: FormControl = new FormControl('', [Validators.required]);
+
   private tasksService: TasksService = inject(TasksService);
   public bsModalRef: BsModalRef = inject(BsModalRef);
 
   createTask(): void {
-    if (this.titleCtrl.invalid) {
+    if (this.titleCtrl.invalid || this.descriptionCtrl.invalid || this.daysCtrl.invalid) {
+      alert('Required fields are not filled in');
       return;
     }
     const task: Task = {
       title: this.titleCtrl.value,
+      description: this.descriptionCtrl.value,
+      days: this.daysCtrl.value,
       status: TaskStatus.NOT_STARTED,
       date: new Date().toISOString()
     };

@@ -2,10 +2,10 @@ import { Component, inject, OnInit } from '@angular/core';
 import { BsModalRef } from "ngx-bootstrap/modal";
 
 @Component({
-  selector: 'app-modal-dialog',
-  templateUrl: 'modal-dialog.component.html'
+  selector: 'app-dialog-container',
+  templateUrl: 'dialog-container.component.html'
 })
-export class ModalDialogComponent implements OnInit {
+export class DialogContainerComponent implements OnInit {
   public bsModalRef: BsModalRef = inject(BsModalRef);
 
   ngOnInit() { }

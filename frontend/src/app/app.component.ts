@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, inject, TemplateRef } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { BsModalRef, BsModalService } from "ngx-bootstrap/modal";
 import { NewTaskFormComponent } from "./components/new-task-form/new-task-form.component";
 
@@ -14,7 +14,8 @@ export class AppComponent {
   constructor(private modalService: BsModalService) {}
 
   openModal(): void {
-    this.modalService.show(NewTaskFormComponent, { ignoreBackdropClick: true });
+    const modalRef: BsModalRef = this.modalService.show(NewTaskFormComponent, { ignoreBackdropClick: true });
+    modalRef.hide();
   }
 
   closeModal(): void {

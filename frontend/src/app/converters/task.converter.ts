@@ -6,8 +6,11 @@ export class TaskConverter {
     return {
       id: task.id,
       title: task.title,
+      description: task.description,
+      daysLeft:this.getDaysLeft(task),
       status: task.status,
       date: task.date,
+      days:task.days,
       daysPassed: this.getDaysPassed(task)
     };
   }
@@ -19,4 +22,16 @@ export class TaskConverter {
     const timePassed: number = new Date().getTime() - new Date(task.date).getTime();
     return Math.round(timePassed / (1000 * 3600 * 24));
   }
+
+  private static getDaysLeft(task: Task): number {
+    if (!task.date) {
+      return 0;
+    }
+    const dateLeft =new Date(task.date);
+    dateLeft.setDate(dateLeft.getDate() + task.days);
+
+    const timeLeft: number =  new Date(dateLeft).getTime()-new Date().getTime();
+    return Math.round(timeLeft / (1000 * 3600 * 24));
+  }
+
 }
