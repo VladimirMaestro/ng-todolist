@@ -6,6 +6,7 @@ import { TaskApi } from "../api/task.api";
 import { map, Observable, tap } from "rxjs";
 import { AppState } from "../models/app-state";
 import { TaskFilters } from "../models/task-filters";
+import { TaskView } from "../models/task-view";
 
 @Injectable({ providedIn: 'root' })
 export class TasksService {

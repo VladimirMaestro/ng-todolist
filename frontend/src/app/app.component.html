@@ -1,12 +1,13 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <div >
+      <div>
         <app-tasks-filters></app-tasks-filters>
-        <button class="btn btn-outline-secondary" (click)="showTaskForm()">Add task</button>
+        <button *ngIf="!this.newTaskFormVisible" class="btn btn-outline-secondary" (click)="showTaskForm()">Add task
+        </button>
       </div>
-      <div >
-        <app-new-task-form (cancel)="hideTaskForm()" *ngIf="this.newTaskFormVisible"></app-new-task-form>
+      <div>
+        <app-new-task-form *ngIf="this.newTaskFormVisible" (cancel)="hideTaskForm()"></app-new-task-form>
       </div>
       <div>
         <app-tasks-list></app-tasks-list>
@@ -14,3 +15,6 @@
     </div>
   </div>
 </div>
+<button type="button" class="btn btn-primary" (click)="openModal()">Create template modal</button>
+<button type="button" class="btn btn-primary" (click)="closeModal()">Close modal</button>
+

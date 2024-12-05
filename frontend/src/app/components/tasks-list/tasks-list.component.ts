@@ -26,12 +26,12 @@ export class TaskListComponent implements OnInit {
     })
   }
 
-  onCompleteStatusChange(task: Task, completed: boolean): void {
+  onCompleteStatusChange(task: TaskView, completed: boolean): void {
     const newStatus: TaskStatus = completed ? TaskStatus.COMPLETED : TaskStatus.NOT_STARTED;
     this.tasksService.setTaskStatus$(task.id, newStatus).subscribe();
   }
 
-  isTaskCompleted(task: Task): boolean {
+  isTaskCompleted(task: TaskView): boolean {
     return task.status === TaskStatus.COMPLETED;
   }
 
